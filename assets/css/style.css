@@ -1,0 +1,385 @@
+@keyframes backToUp-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes background-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  animation: background-fade-in 1.5s ease-in-out;
+}
+.banner img {
+  z-index: 2;
+  width: 680px;
+  height: 480px;
+  animation: backToUp-fade-in 1.5s ease-in-out forwards, floatLogo 2.5s infinite linear;
+  animation-delay: 0s, 1.5s;
+}
+.banner .hero-video {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes floatLogo {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(5px, -10px);
+  }
+  50% {
+    transform: translate(10px, 0);
+  }
+  75% {
+    transform: translate(-10px, 10px);
+  }
+}
+.parallax-effect {
+  z-index: 1;
+  position: absolute;
+  width: 680px;
+  height: 480px;
+}
+
+.swiper-container {
+  width: 1266px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  overflow: hidden;
+}
+.swiper-container .swiper-slide {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.story {
+  animation: backToUp-fade-in 1.5s ease-in-out;
+}
+.story #characters h3 {
+  background-position: left;
+  text-align: left;
+  margin-left: 100px;
+  padding-left: 45px;
+}
+.story #characters div {
+  flex: none;
+}
+.story #place {
+  background-image: url("/wp-content/themes/foce-child/assets/images/Studio_Koukaki-image_place.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.story #place .little-cloud {
+  position: absolute;
+  width: 142px;
+  height: 55px;
+  filter: blur(10px);
+  left: 55%;
+  top: 35%;
+  z-index: 1;
+}
+.story #place .big-cloud {
+  position: absolute;
+  width: 316px;
+  height: 122px;
+  filter: blur(10px);
+  left: 70%;
+  top: 10%;
+  z-index: 1;
+}
+.story #place h3 {
+  margin-bottom: 10px;
+}
+.story p {
+  opacity: 1;
+  animation: UpToBack-fade-in 1.5s ease-in-out;
+}
+
+@keyframes UpToBack-fade-in {
+  from {
+    opacity: 1;
+    transform: translateY(-200px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+#studio {
+  animation: backToUp-fade-in 1.5s ease-in-out;
+}
+#studio p {
+  opacity: 1;
+  animation: UpToBack-fade-in 1.5s ease-in-out;
+}
+
+footer {
+  animation: backToUp-fade-in 1.5s ease-in-out;
+}
+
+.site-footer::before, .site-footer::after {
+  display: none;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.site-footer::after,
+.site-footer ul::after,
+.site-footer::before,
+.story__article::after,
+#studio h2::before,
+#studio h2::after,
+.story h2::after,
+.sunflower-nomination,
+.orchid-nomination {
+  animation: rotate 10s linear infinite;
+}
+
+.animate-title {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.5s ease-out;
+  display: block;
+}
+
+.title-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nomination {
+  display: flex;
+  justify-content: center;
+  animation: backToUp-fade-in 1.5s ease-in-out;
+}
+.nomination .sunflower-nomination {
+  width: 155px;
+  height: 160px;
+  position: relative;
+  left: 6em;
+}
+.nomination .orchid-nomination {
+  width: 155px;
+  height: 160px;
+  position: relative;
+  right: -6em;
+  bottom: 2em;
+}
+.nomination .nomination-image {
+  width: 75%;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.site-header .main-navigation {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  width: 100%;
+}
+.site-header .main-navigation .navigation-center {
+  flex-grow: 1;
+  text-align: center;
+  margin-right: -7em;
+}
+.site-header .main-navigation .navigation-right {
+  display: flex;
+  align-items: center;
+  margin-right: 5em;
+}
+.site-header .main-navigation .burger-icon {
+  cursor: pointer;
+}
+.site-header .main-navigation .burger-icon .bar {
+  display: block;
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.site-header .main-navigation .burger-icon.active .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+.site-header .main-navigation .burger-icon.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.site-header .main-navigation .burger-icon.active .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.sidenav {
+  visibility: hidden;
+  height: 0;
+  width: 100%;
+  max-width: 1440px;
+  position: fixed;
+  z-index: 1;
+  top: 60px;
+  background-color: #fff5e9;
+  overflow: hidden;
+  transition: opacity 1.5s ease;
+  padding-top: 1em;
+}
+.sidenav a {
+  text-decoration: none;
+  font-size: 4em;
+  color: black;
+  display: block;
+  transition: 0.1s;
+}
+.sidenav a .animate-section-link {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease;
+  display: block;
+}
+.sidenav a .animate-section-link.section-link-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.sidenav a:hover {
+  text-shadow: 0 0 15px orangered;
+}
+.sidenav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.sidenav ul p {
+  margin-top: 175px;
+}
+.sidenav img {
+  margin-top: 50px;
+  width: 155px;
+  height: 95px;
+}
+.sidenav.active {
+  height: calc(100% - 60px);
+  visibility: visible;
+  opacity: 1;
+}
+.sidenav .close {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+.sidenav .cat {
+  width: 150px;
+  height: auto;
+  animation: floatLogo 2.5s infinite linear;
+}
+.sidenav .cat1 {
+  position: absolute;
+  bottom: 7em;
+  left: 5em;
+}
+.sidenav .cat2 {
+  position: absolute;
+  top: 5em;
+  left: 20em;
+}
+.sidenav .cat3 {
+  position: absolute;
+  bottom: 23em;
+  right: 15em;
+}
+.sidenav .flower {
+  animation: rotate 10s linear infinite;
+}
+.sidenav .sunflower {
+  position: absolute;
+  width: 216px;
+  height: auto;
+  top: 4em;
+  right: 13em;
+}
+.sidenav .orchid {
+  position: absolute;
+  width: 172px;
+  height: auto;
+  top: 3em;
+  left: -4em;
+}
+.sidenav .random_flower {
+  position: absolute;
+  width: 75px;
+  height: auto;
+  top: 20em;
+  right: -2em;
+}
+.sidenav .flowers {
+  position: absolute;
+  width: 70px;
+  height: auto;
+  bottom: 26em;
+  left: 15em;
+}
+.sidenav .hibiscus_footer {
+  position: absolute;
+  width: 626px;
+  height: auto;
+  bottom: -23em;
+  right: -23em;
+}
+
+.site-header .burger-icon {
+  cursor: pointer;
+}
+.site-header .burger-icon .bar {
+  display: block;
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.site-header .burger-icon.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+.site-header .burger-icon.active span:nth-child(2) {
+  opacity: 0;
+}
+.site-header .burger-icon.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/*# sourceMappingURL=style.css.map */

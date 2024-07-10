@@ -1,0 +1,460 @@
+// Keyframes pour l'animation fade-in du hero logo
+@keyframes backToUp-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(200px); // Début de l'animation du bas vers le haut
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); // Fin de l'animation
+  }
+}
+
+// Keyframes pour l'animation fade-in du hero
+@keyframes background-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Animation du hero
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  animation: background-fade-in 1.5s ease-in-out;
+
+  img {
+    z-index: 2;
+    width: 680px;
+    height: 480px;
+    animation: backToUp-fade-in 1.5s ease-in-out forwards,
+      floatLogo 2.5s infinite linear;
+    animation-delay: 0s, 1.5s;
+  }
+
+  .hero-video {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Flottaison du logo
+@keyframes floatLogo {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(5px, -10px);
+  }
+  50% {
+    transform: translate(10px, 0);
+  }
+  75% {
+    transform: translate(-10px, 10px);
+  }
+}
+
+// Effet de parallax
+.parallax-effect {
+  z-index: 1;
+  position: absolute;
+  width: 680px;
+  height: 480px;
+}
+
+// Carrousel personnages
+.swiper-container {
+  width: 1266px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  overflow: hidden;
+
+  .swiper-slide {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.story {
+  animation: backToUp-fade-in 1.5s ease-in-out;
+
+  #characters {
+    h3 {
+      background-position: left;
+      text-align: left;
+      margin-left: 100px;
+      padding-left: 45px;
+    }
+
+    div {
+      flex: none;
+    }
+  }
+
+  #place {
+    background-image: url("/wp-content/themes/foce-child/assets/images/Studio_Koukaki-image_place.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+
+    .little-cloud {
+      position: absolute;
+      width: 142px;
+      height: 55px;
+      filter: blur(10px);
+      left: 55%;
+      top: 35%;
+      z-index: 1;
+    }
+
+    .big-cloud {
+      position: absolute;
+      width: 316px;
+      height: 122px;
+      filter: blur(10px);
+      left: 70%;
+      top: 10%;
+      z-index: 1;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+    }
+  }
+
+  p {
+    opacity: 1;
+    animation: UpToBack-fade-in 1.5s ease-in-out; // Annulez toute animation pour les paragraphes
+  }
+}
+
+// Animation des sections
+@keyframes UpToBack-fade-in {
+  from {
+    opacity: 1;
+    transform: translateY(-200px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+#studio {
+  animation: backToUp-fade-in 1.5s ease-in-out;
+
+  p {
+    opacity: 1;
+    animation: UpToBack-fade-in 1.5s ease-in-out; // Annulez toute animation pour les paragraphes
+  }
+}
+
+// Footer
+footer {
+  animation: backToUp-fade-in 1.5s ease-in-out;
+}
+
+.site-footer {
+  &::before,
+  &::after {
+    display: none;
+  }
+}
+
+// Rotation des fleurs
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.site-footer::after,
+.site-footer ul::after,
+.site-footer::before,
+.story__article::after,
+#studio h2::before,
+#studio h2::after,
+.story h2::after,
+.sunflower-nomination,
+.orchid-nomination {
+  animation: rotate 10s linear infinite;
+}
+
+// Animation des titres
+.animate-title {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.5s ease-out;
+  display: block;
+}
+
+.title-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// Section nomination
+.nomination {
+  display: flex;
+  justify-content: center;
+  animation: backToUp-fade-in 1.5s ease-in-out;
+
+  .sunflower-nomination {
+    width: 155px;
+    height: 160px;
+    position: relative;
+    left: 6em;
+  }
+
+  .orchid-nomination {
+    width: 155px;
+    height: 160px;
+    position: relative;
+    right: -6em;
+    bottom: 2em;
+  }
+
+  .nomination-image {
+    width: 75%;
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+}
+
+// Menu burger
+.site-header {
+  .main-navigation {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1440px;
+    width: 100%;
+
+    .navigation-center {
+      flex-grow: 1;
+      text-align: center;
+      margin-right: -7em;
+    }
+
+    .navigation-right {
+      display: flex;
+      align-items: center;
+      margin-right: 5em;
+    }
+
+    .burger-icon {
+      cursor: pointer;
+
+      .bar {
+        display: block;
+        width: 35px;
+        height: 5px;
+        background-color: black;
+        margin: 6px 0;
+        transition: transform 0.3s, opacity 0.3s;
+      }
+
+      &.active {
+        .bar:nth-child(1) {
+          transform: rotate(-45deg) translate(-9px, 6px);
+        }
+
+        .bar:nth-child(2) {
+          opacity: 0;
+        }
+
+        .bar:nth-child(3) {
+          transform: rotate(45deg) translate(-8px, -8px);
+        }
+      }
+    }
+  }
+}
+
+// Sidenav menu
+.sidenav {
+  visibility: hidden;
+  height: 0;
+  width: 100%;
+  max-width: 1440px;
+  position: fixed;
+  z-index: 1;
+  top: 60px;
+  background-color: #fff5e9;
+  overflow: hidden;
+  transition: opacity 1.5s ease;
+  padding-top: 1em;
+
+  a {
+    text-decoration: none;
+    font-size: 4em;
+    color: black;
+    display: block;
+    transition: 0.1s;
+
+    .animate-section-link {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.5s ease;
+      display: block;
+
+      &.section-link-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    &:hover {
+      text-shadow: 0 0 15px orangered;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    p {
+      margin-top: 175px;
+    }
+  }
+
+  img {
+    margin-top: 50px;
+    width: 155px;
+    height: 95px;
+  }
+
+  &.active {
+    height: calc(100% - 60px);
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .close {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+  }
+
+  .cat {
+    width: 150px;
+    height: auto;
+    animation: floatLogo 2.5s infinite linear;
+
+    &1 {
+      position: absolute;
+      bottom: 7em;
+      left: 5em;
+    }
+
+    &2 {
+      position: absolute;
+      top: 5em;
+      left: 20em;
+    }
+
+    &3 {
+      position: absolute;
+      bottom: 23em;
+      right: 15em;
+    }
+  }
+
+  .flower {
+    animation: rotate 10s linear infinite;
+  }
+
+  .sunflower {
+    position: absolute;
+    width: 216px;
+    height: auto;
+    top: 4em;
+    right: 13em;
+  }
+
+  .orchid {
+    position: absolute;
+    width: 172px;
+    height: auto;
+    top: 3em;
+    left: -4em;
+  }
+
+  .random_flower {
+    position: absolute;
+    width: 75px;
+    height: auto;
+    top: 20em;
+    right: -2em;
+  }
+
+  .flowers {
+    position: absolute;
+    width: 70px;
+    height: auto;
+    bottom: 26em;
+    left: 15em;
+  }
+
+  .hibiscus_footer {
+    position: absolute;
+    width: 626px;
+    height: auto;
+    bottom: -23em;
+    right: -23em;
+  }
+}
+
+.site-header {
+  .burger-icon {
+    cursor: pointer;
+
+    .bar {
+      display: block;
+      width: 35px;
+      height: 5px;
+      background-color: black;
+      margin: 6px 0;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    &.active {
+      span:nth-child(1) {
+        transform: rotate(-45deg) translate(-9px, 6px);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: rotate(45deg) translate(-8px, -8px);
+      }
+    }
+  }
+}
